@@ -2,7 +2,7 @@ from flask import render_template,redirect,url_for,abort
 from . import main 
 from flask_login import current_user,login_required
 from ..models import Pitch,User,Comment
-from forms import PitchForm,CommentForm
+from .forms import PitchForm,CommentForm
 # Views
 @main.route('/')
 def index():
@@ -13,7 +13,6 @@ def index():
     return render_template('index.html')
 
 @main.route('/create_new', methods = ['POST','GET'])
-@login_required
 def new_pitch():
     form = PitchForm()
     if form.validate_on_submit():
