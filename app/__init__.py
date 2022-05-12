@@ -19,6 +19,8 @@ def create_app():
     app.register_blueprint(authentication_blueprint)
     app.register_blueprint(main_blueprint)
     app.config['SECRET_KEY']='1234'
+    app.config ['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:lee123@localhost/pitch'
+
 
     login_manager.init_app(app)
     db.init_app(app)
