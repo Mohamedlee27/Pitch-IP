@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+                {% for category in pitch %}
+                <div class="col-md-4" >
+                    <div class="thumbnail" id="carded">
+                        <h5 class="card-header">{{category.title}}</h5>
+                        <div class="card-body">
+                                <p>{{category.post}}</p>
+                                <p class="text-center"> Category: {{category.category}}</p>
+                                <footer class="blockquote-footer text-center" > Posted by: {{category.username}}</footer>
+                            <a href="{{url_for('main.comment',pitch_id = category.id)}}" class="btn btn-info btn-sm"> Comment</a>
+                        </div>
+                    </div>
+                </div>
+                
+                {% endfor %}
+        </div>
+</div>
+{% endblock %}
