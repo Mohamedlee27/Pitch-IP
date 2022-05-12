@@ -12,9 +12,14 @@ login_manager.login_view = 'auth.login'
 
 
 def create_app():
-    app = Flask(__name__, debug=True)
+    app = Flask(__name__)
 
     from .auth import auth as authentication_blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(authentication_blueprint)
+    app.register_blueprint(main_blueprint)
+    app.config['SECRET_KEY']='1234'
+
     login_manager.init_app(app)
     db.init_app(app)
     bootstap.init_app(app)
