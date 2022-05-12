@@ -4,6 +4,7 @@ class Config:
     '''
     
 
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lee:lee123@localhost/pitch'
 
 
 
