@@ -1,8 +1,5 @@
+<link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
 {% extends 'bootstrap/base.html'%}
-{% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
-{% endblock %}
 {% block navbar %}
     {% include 'navbar.html' %}
 {% endblock %}
